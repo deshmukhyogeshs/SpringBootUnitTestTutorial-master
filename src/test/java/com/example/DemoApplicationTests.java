@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.context.jdbc.SqlGroup;
@@ -18,6 +19,7 @@ import com.example.repository.ToDoRepository;
 /*@SqlGroup({
     @Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:beforeTestRun.sql"),
     @Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql") })*/
+@TestPropertySource("classpath:testapplication.properties")
 public class DemoApplicationTests {
 
 	@Test
